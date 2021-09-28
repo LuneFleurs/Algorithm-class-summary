@@ -1,0 +1,22 @@
+quickSort(a[], l, r)
+//배열 a[]의 부분 배열 a[l:r]을 오름차순으로 정렬
+    if( r > l) then {
+        i <- partition(a[], l, r);
+        quickSort(a[], l, i-1);
+        quickSort(a[], i+1, r);
+    }
+end quickSort()
+
+partition (a[], l, r)
+    // 가장 오른쪽 원소 a[r] 을 피봇으로 하여 a[] 분할
+    v <- a[r];
+    i <- l-1;
+    j <- r;
+    for (;;) do {
+        do {i <- i+1; } while (a[i] < v); // 피봇 값보다 작으면 i값 증가
+        do {j <- j-1; } while (a[j] > v); // 피봇 값보다 크면 j 값 감소
+        if (i >= j ) then break;
+        a[i] 와 a[j] 교환;
+    }
+    a[i]와 a[r]를 교환;
+end partition()
