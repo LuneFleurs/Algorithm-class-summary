@@ -59,7 +59,7 @@ a = []
 a.append(-1)
 
 for i in range(N):
-    a.append(random.randint(1, N))
+    a.append(random.randint(1, 99999))
 
 Q = []
 start_time = time.time()
