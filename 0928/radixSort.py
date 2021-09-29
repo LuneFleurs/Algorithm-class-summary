@@ -48,12 +48,12 @@ import random, time
 
 # N 의 값에 5000 1000 15000 넣어 비교
 # O(nlogn) 의 결과를 확인할 수 있음
-# N = 100,000 -> 0.685
-# N = 200,000 -> 1.533
-# N = 300,000 -> 2.487
+# N = 100,000 -> 1.140
+# N = 200,000 -> 3.654
+# N = 300,000 -> 7.110
 
 M = 5
-N = 300000
+N = 100000
 a = []
 
 a.append(-1)
@@ -62,6 +62,9 @@ for i in range(N):
     a.append(random.randint(1, 99999))
 
 Q = []
+for i in range(10) :
+    Q.append([])
+
 start_time = time.time()
 radixSort(a, N, M, Q)
 end_time = time.time() - start_time

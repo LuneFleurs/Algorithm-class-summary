@@ -1,0 +1,16 @@
+radixSort(a[], n)
+    for (k <- 1; k <= m; k <- k+1) do {
+        //m은 digit 수, k=1은 가장 작은 자리 수
+        for (i <- 0; i < n; i <- i+1) do {
+            kd <- digit(a[i], k);   // k번째 숫자를 kd에 반환
+            enqueue(Q[kd], a[i]);   // Q[kd]에 a[i]를 삽입
+        }
+        p <- 0;
+        for (i <- 0; i<= 9; i <- i+1) do {
+            while (Q[i] != null) do {   // Q[i]의 모든 원소를 a[]로 이동
+                p <- p+1;
+                a[p] <- dequeue(Q[i]);
+            }
+        }
+    }
+end radixSort()
