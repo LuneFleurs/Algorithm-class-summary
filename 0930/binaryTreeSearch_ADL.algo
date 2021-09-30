@@ -1,0 +1,9 @@
+binaryTreeSearch(T, search_key)
+    x <- T;
+    while (x != null) do {
+        if (x.key = search_key) then return x;
+        if (x.key < search_key) then return binaryTreeSearch(x.right, search_key);
+        else return binaryTreeSearch(x.left, search_key);
+    }
+    return -1;  // 탐색 실패
+end binaryTreeSearch()
