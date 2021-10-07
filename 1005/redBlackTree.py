@@ -105,23 +105,23 @@ class Dict:
 
 import random, time
 
-#N = 9
-N = 10000
+N = 9
+# N = 10000
 key = list(range(1, N +1))
 s_key = list (range (1, N+1))
 #random.shuffle(key)
 
 d = Dict()
 # auto input
-for i in range(0, N):
-    d. insert(key[i])
+# for i in range(0, N):
+#     d. insert(key[i])
 
 # 직접 input 2, 1, 8  9, 7, 3, 6, 4, 5
-# key = int(input('키 : '))
-# while key != 999:
-#     d.insert(key)
-#     d.check(key)
-#     key = int(input('키 : '))
+key = int(input('키 : '))
+while key != 999:
+    d.insert(key)
+    d.check(key)
+    key = int(input('키 : '))
 
 start_time = time.time()
 

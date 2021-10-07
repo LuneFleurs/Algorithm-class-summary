@@ -1,35 +1,44 @@
 black ← 0;
 red ← 1;
+
 insert(T, v)
-// p : x의 부모 노드, g : x의 조부모 노드, gg : x의 증조부모 노드
-x ← T; p ← T; g ← T;
-while (x ≠ null) do {
-gg ← g; g ← p; p ← x;
-if (x.key = v) then return;
-if (x.key > v) then x ← x.left;
-else x ← x.right;
-if ((x.left.color = red) and (x.right.color = red)) then
-split(x, p, g, gg, v);
-}
-x ← color가 red이고 key 값이 v인 새로운 노드;
-if (p.key > v) then p.left ← x;
-else p.right ← x;
-split(x, p, g, gg, v);
-T.right.color ← black;
+    // p : x의 부모 노드, g : x의 조부모 노드, gg : x의 증조부모 노드
+    x ← T; p ← T; g ← T;
+    while (x ≠ null) do {
+        gg ← g; g ← p; p ← x;
+
+        if (x.key = v) then return;
+        if (x.key > v) then x ← x.left;
+        else x ← x.right;
+
+        if ((x.left.color = red) and (x.right.color = red)) then
+            split(x, p, g, gg, v);
+    }
+    x ← color가 red이고 key 값이 v인 새로운 노드;
+
+    if (p.key > v) then p.left ← x;
+    else p.right ← x;
+
+    split(x, p, g, gg, v);
+    T.right.color ← black;
+
 end insert()
+
 split(x, p, g, gg, v)
-x.color ← red;
-x.left.color ← black;
-x.right.color ← black;
-if (p.color = red) then {
-g.color ← red;
-if ((g.key > v) ≠ (p.key > v)) then
-p ← rotate(v, g);
-x ← rotate(v, gg);
-x.color ← black;
-}
-end split()
+    x.color ← red;
+    x.left.color ← black;
+    x.right.color ← black;
+    if (p.color = red) then {
+        g.color ← red;
+        if ((g.key > v) ≠ (p.key > v)) then
+            p ← rotate(v, g);
+        x ← rotate(v, gg);
+        x.color ← black;
+    }
+    end split()
+
 rotate(v, y)
-// c : y의 자식 노드, gc : y의 손주 노드
-return gc;
+    // c : y의 자식 노드, gc : y의 손주 노드
+
+    return gc;
 end rotate()
