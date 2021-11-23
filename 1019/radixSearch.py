@@ -102,20 +102,20 @@ for i in range(N):
     d. insert(key[i])
 
 
-# Manual input
-N = 7
-maxb = 14
-d = Dict()
+# # Manual input
+# N = 7
+# maxb = 14
+# d = Dict()
 
-# 직접 input 1, 19, 5, 18, 3, 26, 9
-key = int(input('키 : '))
-while key != 999:
-    d.insert(key)
-    d.check(key)
-    key = int(input('키 : '))
+# # 직접 input 1, 19, 5, 18, 3, 26, 9
+# key = int(input('키 : '))
+# while key != 999:
+#     d.insert(key)
+#     d.check(key)
+#     key = int(input('키 : '))
 
-s_key = list(range(1, 8))
-random.shuffle(key)
+# s_key = list(range(1, 8))
+# random.shuffle(key)
 
 d.head.external = True
 

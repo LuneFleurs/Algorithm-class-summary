@@ -1,0 +1,16 @@
+packageWrapping(p[], N)
+    배열 p[]에서 가장 작은 y 값을 찾아 min이 가리키도록 함;
+    p[N] <- p[min]; th <- 0.0;
+    for (M <- 0; M < N; M++) do {
+        배열 p[]에서 M과 min을 서로 교환;
+        min <- N; v <- th; th <- 360.0;
+        for (I <- M+1; I <= N; I <- I+1) do 
+        if (theta(p[M], p[i]) > v) then {
+            if (theta(p[M], p[i]) < th) then {
+                min <- I;
+                th <- theta(p[M], p[min]);
+            }
+        }
+    }
+    if (minIndex = n) then return m;
+end packageWrapping()

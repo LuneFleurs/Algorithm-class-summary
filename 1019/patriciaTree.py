@@ -92,19 +92,20 @@ class Dict:
         else : 
             return 0
 
-    def check(self, search_key):
-        x = p = self.head.right
-        while (x != self.z):
-            if x.color == 0:
-                str_color = 'black'
-            else:
-                str_color = 'red'
-            print('key : ', x.key, ', parents: ', p.key, ', color : ', str_color)
+    def check(self, v):
+        v = bitskey(v)
+        x = p = self.head.left
+        b = maxb
+        self.z.key = v
+        while v.get() != x.key.get():
+            b = b - 1
             p = x
-            if x.key > search_key:
-                x = x.left
-            else:
+            if v.bits(b, 1):
                 x = x.right
+            else:
+                x = x.left
+        print('key : ', x.key.get(), ', parents: ', p.key.get())
+
 
 
 import random, time
